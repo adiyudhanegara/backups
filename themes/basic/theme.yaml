@@ -1,0 +1,12 @@
+name: 'Basic'
+description: 'Basic theme for my winter cms'
+author: 'Dona'
+homepage: 'whatever'
+code: basic
+form:
+    fields:
+        googleanalytics_id:
+            label: 'Google Analytics ID'
+translate:
+    id: config/id.yaml
+    en: config/en.yaml

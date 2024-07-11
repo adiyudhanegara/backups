@@ -1,0 +1,73 @@
+description = "Frontend Layout"
+
+[localePicker]
+forceUrl = 0
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="author" content="Winter CMS">
+        <meta name="generator" content="Winter CMS">
+
+        <title>{% placeholder page_title default %}{{ this.page.title }}{% endplaceholder %}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+
+        <link rel="icon" type="image/png" href="{{'assets/images/favicon.ico'|theme }}">
+
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+        <!-- Fontawsome -->
+        <script src="{{'assets/vendor/font-awesome/v6.3.0/all.js'|theme }}"></script>
+
+        <link href="{{'assets/css/styles.css'|theme }}" rel="stylesheet">
+
+        {% styles %}
+        {% partial "meta/seo" %}
+
+        {% set pageId = this.page.id %}
+        {% set pageTitle = this.page.title %}
+        {% if pageId is empty %}
+            {% set pageId = page.id %}
+        {% endif %}
+        {% if pageTitle is empty %}
+            {% set pageTitle = page.title %}
+        {% endif %}
+    </head>
+
+    <body class="page-{{ pageId }} layout-{{ this.layout.id }}">
+
+        <!-- Header -->
+        <header id="layout-header">
+            {% partial 'shared/header' %}
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'shared/footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{'assets/javascript/app.js'|theme }}"></script>
+        {% snowboard all %}
+        {% scripts %}
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{'assets/javascript/scripts.js'|theme }}"></script>
+    </body>
+</html>

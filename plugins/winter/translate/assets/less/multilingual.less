@@ -1,0 +1,128 @@
+@import "../../../../../modules/backend/assets/less/core/boot.less";
+
+@multilingual-btn-color: #555555;
+
+.field-multilingual {
+    position: relative;
+
+    .ml-btn {
+        z-index: 2;
+        position: absolute;
+        top: 1px;
+        bottom: 1px;
+        right: 1px;
+        
+        width: auto;
+        max-width: 44px;
+        max-height: 38px;
+
+        color: lighten(@multilingual-btn-color, 15%);
+        background-color: #F8F6F3;
+        box-shadow: none;
+
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        margin: 0 !important;
+        padding: 0 12px;
+
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        
+        transition: color 420ms ease;
+
+        &:hover {
+            color: @multilingual-btn-color;
+        }
+    }
+
+    &.field-multilingual-repeater .ml-btn {
+        top: 3px;
+        bottom: auto;
+        height: auto;
+        transform: translateY(-100%);
+        border-radius: .375rem;
+    }
+
+    &.field-multilingual-textarea {
+        textarea {
+            padding-right: 2rem;
+        }
+
+        .ml-btn {
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: .375rem;
+        }
+        
+        .ml-dropdown-menu {
+            top: 28px;
+            right: 1px;
+        }
+    }
+
+    &.field-multilingual-richeditor {
+        .ml-btn {
+            border-radius: 0;
+            border-bottom-left-radius: .375rem;
+        }
+
+        .ml-dropdown-menu {
+            top: 28px;
+            right: 1px;
+        }
+    }
+
+    &.field-multilingual-markdowneditor {
+        .mode-tab .editor-write {
+            padding-right: 2rem;
+        }
+
+        .mode-split .editor-preview {
+            padding-right: 2rem;
+        }
+
+        .editor-code {
+            padding-right: inherit;
+        }
+
+        .ml-btn {
+            border-radius: 0;
+            border-bottom-left-radius: .375rem;
+        }
+
+        .ml-dropdown-menu {
+            top: 28px;
+            right: 1px;
+        }
+    }
+
+    &.field-multilingual-repeater,
+    &.field-multilingual-nestedform {
+        .ml-dropdown-menu {
+            top: 2px;
+            right: 0;
+        }
+    }
+
+    &.field-multilingual-mediafinder {
+        .ml-btn {
+            border-radius: .375rem;
+        }
+    }
+}
+
+.fancy-layout {
+    .form-tabless-fields .field-multilingual {
+        .ml-btn {
+            background-color: rgba(248, 246, 243, 0.75)
+        }
+    }
+}
+
+// ?? CHECK THIS
+// .help-block.before-field + .field-multilingual.field-multilingual-textarea {
+//     .ml-btn {
+//         top: -41px;
+//     }
+// }
