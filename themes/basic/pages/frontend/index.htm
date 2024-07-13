@@ -5,9 +5,20 @@ description = "Landing Page"
 is_hidden = 0
 
 [viewBag]
-localeTitle[en] = "Home"
-localeUrl[en] = "/home"
+// localeTitle[en] = "Home"
+// localeTitle[id] = "Beranda"
+// localeUrl[en] = "/home"
+// localeUrl[id] = "/beranda"
 ==
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Welcome To Our Studio!</div>
+        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+    </div>
+</header>
 
 <!-- Services-->
 <section class="page-section" id="services">
@@ -44,6 +55,7 @@ localeUrl[en] = "/home"
         </div>
     </div>
 </section>
+
 <!-- Portfolio Grid-->
 <section class="page-section bg-light" id="portfolio">
     <div class="container">
@@ -145,6 +157,7 @@ localeUrl[en] = "/home"
         </div>
     </div>
 </section>
+
 <!-- About-->
 <section class="page-section" id="about">
     <div class="container">
@@ -207,6 +220,23 @@ localeUrl[en] = "/home"
         </ul>
     </div>
 </section>
+
+{# Find Us #}
+<section class="page-section" id="adress">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Visit Us!</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+    </div>
+    <div class="container-fluid p-0">
+        <div class="text-center map-container">
+            {% set map_link = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15779.703004150231!2d115.2595348!3d-8.6031275!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23e4a710ed38f%3A0x6b0e92bfa1ada1f3!2sGenta%20Sari%20Silver%20Class%20Jewelery%20Bali!5e0!3m2!1sen!2sid!4v1720854138938!5m2!1sen!2sid" %}
+            <iframe src={{ map_link }} width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
 <!-- Team-->
 <section class="page-section bg-light" id="team">
     <div class="container">
@@ -251,6 +281,7 @@ localeUrl[en] = "/home"
         </div>
     </div>
 </section>
+
 <!-- Clients-->
 <div class="py-5">
     <div class="container">
@@ -270,6 +301,7 @@ localeUrl[en] = "/home"
         </div>
     </div>
 </div>
+
 <!-- Contact-->
 <section class="page-section" id="contact">
     <div class="container">
@@ -277,14 +309,8 @@ localeUrl[en] = "/home"
             <h2 class="section-heading text-uppercase">Contact Us</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
-        <!-- * * * * * * * * * * * * * * *-->
-        <!-- * * SB Forms Contact Form * *-->
-        <!-- * * * * * * * * * * * * * * *-->
-        <!-- This form is pre-integrated with SB Forms.-->
-        <!-- To make this form functional, sign up at-->
-        <!-- https://startbootstrap.com/solution/contact-forms-->
-        <!-- to get an API token!-->
-        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+        {{ form_ajax('onSave', { id: 'contactForm', class: 'form-horizontal', data: {'sb-form-api-token': 'API_TOKEN'} }) }}
             <div class="row align-items-stretch mb-5">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -330,8 +356,10 @@ localeUrl[en] = "/home"
             <!-- an error submitting the form-->
             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
             <!-- Submit Button-->
-            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-        </form>
+            <div class="text-center">
+                <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button>
+            </div>
+        {{ form_close() }}
     </div>
 </section>
 

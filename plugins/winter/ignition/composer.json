@@ -1,0 +1,44 @@
+{
+    "name": "winter/wn-ignition-plugin",
+    "type": "winter-plugin",
+    "description": "Ignition integration for Winter CMS.",
+    "homepage": "https://github.com/wintercms/wn-ignition-plugin",
+    "keywords": ["winter", "ignition", "flare", "flareapp", "laravel", "winter cms", "wintercms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Towers",
+            "email": "wintercms@luketowers.ca",
+            "homepage": "https://luketowers.ca",
+            "role": "Author"
+        },
+        {
+            "name": "Winter CMS Maintainers",
+            "homepage": "https://wintercms.com",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/wintercms/wn-ignition-plugin/issues",
+        "discord": "https://discord.gg/D5MFSPH6Ux",
+        "source": "https://github.com/wintercms/wn-ignition-plugin"
+    },
+    "require": {
+        "php": ">=7.2",
+        "composer/installers": "~1.0",
+        "spatie/laravel-ignition": "^1.4"
+    },
+    "extra": {
+        "installer-name": "ignition",
+        "laravel": {
+            "dont-discover": [
+                "spatie/laravel-ignition"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

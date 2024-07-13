@@ -1,0 +1,156 @@
+body.layout-frontend{
+  // Navigation
+  .nav-item{
+    form{
+      select[name="locale"]{
+        width: auto;
+        text-align: center;
+        option{
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  // Floating Back to Top Button
+  #btn-back-to-top{
+    position: fixed;
+    display: flex;
+    height: 0;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    bottom: 30px;
+    left: 30px;
+    opacity: 0.25;
+    transition: opacity 0.2s ease-in-out, height 0.2s ease-in-out;
+    border: unset;
+    overflow: hidden;
+    padding: 0;
+  }
+  #btn-back-to-top.active{
+    height: 50px;
+  }
+  #btn-back-to-top:hover{
+    opacity: 1!important;
+  }
+  #btn-back-to-top.left{
+    left: 30px;
+  }
+  #btn-back-to-top.right{
+    left: unset;
+    right: 30px;
+  }
+
+  // Floating container
+  .floating-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+    .supp {
+      position: relative;
+      height: 70px;
+      width: 70px;
+      background-color: var(--bs-primary);
+      border-radius: 50%;
+      z-index: 2;
+      color: var(--bs-white);
+      .floating-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+      .floating-content .material-icons {
+        color: white;
+        font-size: 48px;
+      }
+    }
+    .supp::before {
+      content: " ";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 35px;
+      width: 35px;
+      border-radius: 10px 0 0 0;
+      background-color: inherit;
+      z-index: -1;
+    }
+    .sub-button {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 10px;
+      right: 10px;
+      height: 50px;
+      width: 50px;
+      background-color: var(--bs-primary);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      a{
+        color: var(--bs-white);
+      }
+    }
+    .sub-button:hover {
+      cursor: pointer;
+    }
+    .sub-button .material-icons {
+      color: white;
+      padding-top: 6px;
+    }
+  }
+  .floating-container:hover{
+    opacity: 1;
+  }
+  .floating-container.left{
+    left: 30px;
+    .supp::before {
+      border-radius: 0 0 0 10px;
+      left: 0;
+    }
+  }
+  .floating-container.right{
+    left: unset;
+    right: 30px;
+    .supp::before {
+      border-radius: 0 0 10px 0;
+      left: unset;
+      right: 0;
+    }
+  }
+  .floating-container:hover {
+    height: 100%;
+  }
+  .floating-container:hover .sub-button:nth-child(2) {
+    transform: translateY(-80px);
+  }
+  .floating-container:hover .sub-button:nth-child(3) {
+    transform: translateY(-140px);
+  }
+  .floating-container:hover .sub-button:nth-child(4) {
+    transform: translateY(-200px);
+  }
+  .floating-container:hover .sub-button:nth-child(5) {
+    transform: translateY(-260px);
+  }
+  .floating-container:hover .sub-button:nth-child(6) {
+    transform: translateY(-320px);
+  }
+
+  // Map container
+  .map-container{
+    height: 50vh;
+    background-color: #808080;
+  }
+}

@@ -10,7 +10,7 @@ forceUrl = 0
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <meta name="author" content="Winter CMS">
+        <meta name="author" content="Adi Yudhanegara">
         <meta name="generator" content="Winter CMS">
 
         <title>{% placeholder page_title default %}{{ this.page.title }}{% endplaceholder %}</title>
@@ -20,13 +20,24 @@ forceUrl = 0
         <link rel="icon" type="image/png" href="{{'assets/images/favicon.ico'|theme }}">
 
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        {# <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" /> #}
 
         <!-- Fontawsome -->
         <script src="{{'assets/vendor/font-awesome/v6.3.0/all.js'|theme }}"></script>
 
-        <link href="{{'assets/css/styles.css'|theme }}" rel="stylesheet">
+        <!-- Main CSS -->
+        <link href="{{ [
+            '@framework.extras',
+            'assets/css/styles.css',
+            'assets/stylesheets/annimations.less',
+        ]|theme }}" rel="stylesheet">
+
+        <!-- Layout CSS -->
+        <link href="{{ [
+            '@framework.extras',
+            'assets/stylesheets/frontend/main.less',
+        ]|theme }}" rel="stylesheet">
 
         {% styles %}
         {% partial "meta/seo" %}
@@ -43,31 +54,63 @@ forceUrl = 0
 
     <body class="page-{{ pageId }} layout-{{ this.layout.id }}">
 
-        <!-- Header -->
-        <header id="layout-header">
-            {% partial 'shared/header' %}
-        </header>
+        <!-- Navigation-->
+        {% partial 'shared/navigation' %}
 
         <!-- Content -->
-        <section id="layout-content">
+        <main id="layout-content">
             {% page %}
-        </section>
 
-        <!-- Footer -->
-        <footer id="layout-footer">
             {% partial 'shared/footer' %}
-        </footer>
+        </main>
+
+        <!-- Back to top button -->
+        <button type="button" class="btn btn-secondary btn-floating btn-lg right bounce2 forward" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Support button -->
+        <div class="floating-container left wiggle pause-on-hover">
+            <div class="supp shadow">
+                <div class="floating-content">
+                    <i class="fa-solid fa-headset fa-2xl"></i>
+                </div>
+            </div>
+            <div class="sub-button shadow">
+                <a href="https://google.com" target="_blank">
+                    <i class="fa-brands fa-whatsapp fa-xl"></i>
+                </a>
+            </div>
+            <div class="sub-button shadow">
+                <a href="https://google.com" target="_blank">
+                    <i class="fa-brands fa-facebook-f fa-xl"></i>
+                </a>
+            </div>
+            <div class="sub-button shadow">
+                <a href="https://google.com" target="_blank">
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                </a>
+            </div>
+            <div class="sub-button shadow">
+                <a href="/" target="_blank">
+                    <i class="fa-sharp fa-light fa-globe fa-2xs fa-xl"></i>
+                </a>
+            </div>
+        </div>
 
         <!-- Scripts -->
-        <script src="{{'assets/vendor/jquery.js'|theme }}"></script>
-        <script src="{{'assets/vendor/bootstrap.js'|theme }}"></script>
-        <script src="{{'assets/javascript/app.js'|theme }}"></script>
+        <script src="{{ [
+            '@jquery',
+            '@framework',
+            '@framework.extras',
+            'assets/vendor/bootstrap.js',
+            'assets/vendor/bootstrap.bundle.min.js',
+            'assets/javascript/app.js',
+            'assets/javascript/scripts.js',
+            'assets/javascript/frontend/main.js',
+        ]|theme }}"></script>
+
         {% snowboard all %}
         {% scripts %}
-
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{{'assets/javascript/scripts.js'|theme }}"></script>
     </body>
 </html>
