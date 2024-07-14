@@ -1,1 +1,17 @@
 site.name: 'My Website Name'
+site.menu: "Menu"
+
+contactForm.name1: "Your Name *"
+contactForm.phone: "Your Phone *"
+contactForm.email: "Your Email *"
+contactForm.attachment: "Attachment"
+contactForm.message: "Your Message"
+
+contactForm.name1.required_validate: "Please enter your name!"
+contactForm.phone.required_validate: "Please enter your phone!"
+contactForm.email.required_validate: "Please enter your email!"
+contactForm.email.email_validate: "Please enter a valid email!"
+
+contactForm.submit: "Send Message"
+contactForm.success: "Thankyou for your feedback!"
+contactForm.failed: "There was an error sending your data!"

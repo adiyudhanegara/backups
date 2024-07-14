@@ -1,1 +1,17 @@
 site.name: 'Nama Website Saya'
+site.menu: "Menu"
+
+contactForm.name1: "Nama Anda *"
+contactForm.phone: "Telepon Anda *"
+contactForm.email: "Email Anda *"
+contactForm.attachment: "Lampiran"
+contactForm.message: "Pesan Anda"
+
+contactForm.name1.required_validate: "Silahkan masukan nama anda!"
+contactForm.phone.required_validate: "Silahkan masukan telepon anda!"
+contactForm.email.required_validate: "Silahkan masukan email anda!"
+contactForm.email.email_validate: "Silahkan masukan email yang benar!"
+
+contactForm.submit: "Kirim Pesan"
+contactForm.success: "Terimakasih atas feedback anda!"
+contactForm.failed: "Silahkan periksa kembali data yang anda kirim!"

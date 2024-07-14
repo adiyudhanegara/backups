@@ -24,7 +24,15 @@ forceUrl = 0
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" /> #}
 
         <!-- Fontawsome -->
-        <script src="{{'assets/vendor/font-awesome/v6.3.0/all.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/font-awesome/v6.3.0/all.js'|theme }}"></script>
+        <script src="{{ [
+            '@jquery',
+            '@framework',
+            '@framework.extras',
+            'assets/vendor/bootstrap.js',
+            'assets/vendor/bootstrap.bundle.min.js',
+            'assets/vendor/jquery.validate/jquery.validate.min.js',
+        ]|theme }}"></script>
 
         <!-- Main CSS -->
         <link href="{{ [
@@ -100,11 +108,6 @@ forceUrl = 0
 
         <!-- Scripts -->
         <script src="{{ [
-            '@jquery',
-            '@framework',
-            '@framework.extras',
-            'assets/vendor/bootstrap.js',
-            'assets/vendor/bootstrap.bundle.min.js',
             'assets/javascript/app.js',
             'assets/javascript/scripts.js',
             'assets/javascript/frontend/main.js',
