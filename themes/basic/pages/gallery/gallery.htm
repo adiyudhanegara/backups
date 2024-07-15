@@ -1,0 +1,29 @@
+title = "Galleries"
+url = "/gallery/:slug"
+layout = "frontend"
+is_hidden = 0
+
+[gallerySlug]
+slug = "{{ :slug }}"
+inline = 0
+noImagesMessage = "No images in this gallery"
+plugins[] = "lgThumbnail"
+plugins[] = "lgZoom"
+preload = 2
+mode = "lg-slide"
+speed = 600
+loop = 1
+pause = 5000
+counter = 1
+controls = 1
+download = 1
+escKey = 1
+width = 300
+height = 300
+resizer = "auto"
+==
+{% partial 'shared/galleryHeader' %}
+
+<section class="page-section" id="gallery">
+  {% component 'gallerySlug' %}
+</section>

@@ -1,0 +1,17 @@
+title = "Categories"
+url = "/category/:slug"
+layout = "frontend"
+is_hidden = 0
+
+[galleriesList categoriesList]
+galleryPage = "gallery/category"
+categoryPage = "gallery/gallery"
+galleriesPerPage = 1
+pageNumber = "{{ :page }}"
+noGalleriesMessage = "No galleries found"
+==
+{% partial 'shared/galleryHeader' %}
+
+<section class="page-section" id="gallery-categories-list">
+  {% component 'categoriesList' %}
+</section>

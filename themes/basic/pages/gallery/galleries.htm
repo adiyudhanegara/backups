@@ -1,0 +1,16 @@
+title = "Galleries"
+url = "/galleries"
+layout = "frontend"
+
+[galleriesList]
+galleryPage = "gallery/gallery"
+categoryPage = "gallery/category"
+galleriesPerPage = 6
+pageNumber = "{{ :page }}"
+noGalleriesMessage = "No galleries found"
+==
+{% partial 'shared/galleryHeader' %}
+
+<section class="page-section" id="galleries-list">
+    {% component 'galleriesList' %}
+</section>
