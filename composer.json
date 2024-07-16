@@ -41,7 +41,8 @@
         "winter/wn-ignition-plugin": "dev-main",
         "janvince/smallcontactform": "^1.68",
         "dimsog/wn-slider-plugin": "^1.0",
-        "hounddd/wn-lightgallery-plugin": "^1.0"
+        "hounddd/wn-lightgallery-plugin": "^1.0",
+        "offline/oc-seeder-plugin": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.8",
