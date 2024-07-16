@@ -239,6 +239,7 @@ tabs:
                         type: dropdown
                         required: true
                         cssClass: field-indent
+
                     label:
                         span: right
                         label: 'janvince.smallcontactform::lang.settings.form_fields.label'
@@ -376,7 +377,6 @@ tabs:
                             action: show
                             field: field_styling
                             condition: checked
-
 
                     field_validation:
                         label: 'janvince.smallcontactform::lang.settings.form_fields.field_validation'
