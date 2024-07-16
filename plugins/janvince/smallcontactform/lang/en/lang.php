@@ -298,7 +298,9 @@ return [
 
     'form_field_types' => [
       'text' => 'Text',
+      'number' => "Number",
       'email' => 'Email',
+      'tel' => "Phone",
       'textarea' => 'Textarea',
       'checkbox' => 'Checkbox',
       'dropdown' => 'Dropdown',

@@ -8,6 +8,7 @@ use System\Classes\PluginManager;
 
 class Settings extends Model
 {
+    use \OFFLINE\Seeder\Traits\HasSeederFactory;
 
     public $implement = [
         'System.Behaviors.SettingsModel',
@@ -215,6 +216,31 @@ class Settings extends Model
         'use_name_attribute' => true,
         'attributes' => [
           'type' => 'text',
+        ],
+        'html_close' => null,
+      ],
+
+      'tel' => [
+        'html_open' => 'input',
+        'label' => true,
+        'wrapper_class' => 'form-group',
+        'field_class' => 'form-control',
+        'use_name_attribute' => true,
+        'attributes' => [
+          'type' => 'tel',
+        ],
+        'html_close' => null,
+      ],
+
+      'number' => [
+        'html_open' => 'input',
+        'label' => true,
+        'wrapper_class' => 'form-group',
+        'field_class' => 'form-control',
+        'use_name_attribute' => true,
+        'attributes' => [
+          'type' => 'number',
+          'inputmode' => 'numeric',
         ],
         'html_close' => null,
       ],
