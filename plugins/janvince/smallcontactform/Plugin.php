@@ -187,4 +187,9 @@ class Plugin extends PluginBase {
         ];
     }
 
+    public function registerSeeder()
+    {
+        Settings::where("item", '=', "janvince_smallcontactform_settings")->delete();
+        Settings::factory()->count(1)->create();
+    }
 }
