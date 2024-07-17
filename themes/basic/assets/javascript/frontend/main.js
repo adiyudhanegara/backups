@@ -145,6 +145,8 @@ $(function(){
 		event.preventDefault();
 		var direction = $($(this).attr("href"));
 		if(direction.length == 0) return false;
-		scroll_to(direction);
+		scroll_to(direction, {
+			space: -50,
+		});
 	});
 });

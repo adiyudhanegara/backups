@@ -1,5 +1,11 @@
-site.name: 'My Website Name'
+site.name: 'Genta Sari Silver'
+
 site.menu: "Menu"
+site.menu.introduction: "Introduction"
+site.menu.products: "Products"
+site.menu.address: "Address"
+site.menu.gellery: "Galleries"
+site.menu.contact: "Contact"
 
 contactForm.name1: "Your Name *"
 contactForm.phone: "Your Phone *"
@@ -15,3 +21,5 @@ contactForm.email.email_validate: "Please enter a valid email!"
 contactForm.submit: "Send Message"
 contactForm.success: "Thankyou for your feedback!"
 contactForm.failed: "There was an error sending your data!"
+
+slider.btn.explore: "WKWKWK"

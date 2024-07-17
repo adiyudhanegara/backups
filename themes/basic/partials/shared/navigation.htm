@@ -1,10 +1,12 @@
 [localePicker]
 forceUrl = 0
 ==
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="{{'assets/images/navbar-logo.svg'|theme }}" alt="..." />
+        <a class="navbar-brand lh-sm" href="/">
+          {# <img src="{{'assets/images/navbar-logo.svg'|theme }}" alt="..." /> #}
+          <h3 class="company-name fw-light text-capitalize m-0">Genta<b class="fw-bold">Sari</b></h3>
+          <h6 class="slogan sfst-italic text-capitalize mb-0" style="font-size:0.75rem;">Silver & Gold Jewellry</h6>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             {{ 'site.menu'|_ }}
@@ -12,12 +14,11 @@ forceUrl = 0
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#adress">Adress</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#team">Team</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#introduction">{{ 'site.menu.introduction'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#products">{{ 'site.menu.products'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#address">{{ 'site.menu.address'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#gallery">{{ 'site.menu.gellery'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#contact">{{ 'site.menu.contact'|_ }}</a></li>
                 {% if this.page.layout != "exeption" %}
                     <li class="nav-item">
                         {% component 'localePicker' %}

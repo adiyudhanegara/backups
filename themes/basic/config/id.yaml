@@ -1,5 +1,11 @@
-site.name: 'Nama Website Saya'
+site.name: 'Genta Sari Silver'
+
 site.menu: "Menu"
+site.menu.introduction: "Introduction"
+site.menu.products: "Product"
+site.menu.address: "Address"
+site.menu.gellery: "Gallery"
+site.menu.contact: "Contact"
 
 contactForm.name1: "Nama Anda *"
 contactForm.phone: "Telepon Anda *"
