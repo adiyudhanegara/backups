@@ -10,9 +10,49 @@ function delay(callback, ms) {
   };
 }
 
+// ======= SCROLL TO ELEMENT =======
+function scroll_to(el, opts={}){
+  sub_el = undefined;
+  if (el.is("select.using-chosen:hidden")) {
+    sub_el = el.next();
+  }
+  o={
+    space: opts.space || 0,
+    horizontal: opts.horizontal || false,
+    container: opts.container || [document.documentElement, document.body],
+    center: opts.center || false,
+    callback: opts.callback || function(){
+      if (el.is("input:not(:disabled):not(:animated), select:not(:disabled):not(:animated)")) {
+        el.focus();
+      }
+    }
+  }
+  if (o.horizontal) {
+    let scroll_pos = 0;
+    $(`.product-details-navigation li:not(:nth-child(1n+${el.index()+1}))`).each(function(index) {
+      scroll_pos += parseInt($(this).width(), 10) + 15;
+    });
+    if (o.center) {
+      scroll_pos -= (parseInt($(o.container).width(), 10)/2) - ((parseInt(el.width(), 10)+15)/2);
+    }
+    $(o.container).animate({
+      scrollLeft: scroll_pos + o.space
+    }, 500);
+  }else{
+    $(o.container).animate({
+      scrollTop: (sub_el || el).offset().top+o.space
+    }, 500, 'swing', o.callback);
+  }
+}
+
+// Jump to Top]
+function backToTop() {
+	scroll_to($("body"));
+}
 //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
-
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
 // When the user scrolls down 20px from the top of the document, show the button
 scrollFunction();
 window.onscroll = delay(function () {
@@ -31,14 +71,8 @@ function scrollFunction() {
 		mybutton.classList.remove("active");
 	}
 }
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
 
-function backToTop() {
-	document.body.scrollTop = 0;
-	document.documentElement.scrollTop = 0;
-}
-
+// Validation with jQuery Validate
 $(document).ready( function () {
 	$("#contactForm").validate( {
 		rules: {
@@ -99,5 +133,18 @@ $(document).ready( function () {
 			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
 			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 		}
-	} );
-} );
+	});
+});
+
+// Href link anchor handler
+$(function(){
+	AOS.init({ offset: 100, duration:700, easing:"ease-out-quad", once:false });
+	window.addEventListener('load', AOS.refresh);
+
+	$("a[rel='nofollow']").on("click", function(event) {
+		event.preventDefault();
+		var direction = $($(this).attr("href"));
+		if(direction.length == 0) return false;
+		scroll_to(direction);
+	});
+});
