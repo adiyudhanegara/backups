@@ -35,3 +35,5 @@ package-lock.json
 public
 
 /config/database*
+
+/config/database*
