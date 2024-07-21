@@ -43,7 +43,8 @@
         "dimsog/wn-slider-plugin": "^1.0",
         "hounddd/wn-lightgallery-plugin": "^1.0",
         "offline/oc-seeder-plugin": "^3.0",
-        "winter/wn-sitemap-plugin": "^2.0"
+        "winter/wn-sitemap-plugin": "^2.0",
+        "webvpf/wn-robots-plugin": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.8",
