@@ -86,9 +86,15 @@ class Sitemap extends Model
 
         $alternateLocales = [];
 
+        // october 2
+        if (class_exists('\RainLab\Translate\Models\Locale')){
+            $defaultLocale = \RainLab\Translate\Models\Locale::getDefault()->code;
+            $alternateLocales = array_keys(\RainLab\Translate\Models\Locale::listEnabled());
+        } else { // october 3
+            $defaultLocale = \RainLab\Translate\Classes\Locale::getDefault()->code;
+            $alternateLocales = \RainLab\Translate\Classes\Locale::listEnabled();
+        }
         $translator = \RainLab\Translate\Classes\Translator::instance();
-        $defaultLocale = \RainLab\Translate\Models\Locale::getDefault()->code;
-        $alternateLocales = array_keys(\RainLab\Translate\Models\Locale::listEnabled());
         $translator->setLocale($defaultLocale, false);
 
         /*
@@ -136,25 +142,32 @@ class Sitemap extends Model
                         $alternateLocaleUrls = [];
 
                         if ($item->type == 'cms-page') {
-                            $page = Page::loadCached($theme, $item->reference);
-                            $router = new RainRouter;
+                            $url = $itemInfo['url'];
+                            if (isset($itemInfo['sites'])) { // October 3
+                                foreach ($itemInfo['sites'] as $site) {
+                                    $alternateLocaleUrls[$site['locale']] = $site['url'];
+                                }
+                            } else { // October 2
+                                $page = Page::loadCached($theme, $item->reference);
+                                $router = new RainRouter;
 
-                            if ($page->hasTranslatablePageUrl($defaultLocale)) {
-                                $page->rewriteTranslatablePageUrl($defaultLocale);
-                            }
+                                if ($page->hasTranslatablePageUrl($defaultLocale)) {
+                                    $page->rewriteTranslatablePageUrl($defaultLocale);
+                                }
 
-                            $url = $translator->getPathInLocale($page->url, $defaultLocale);
-                            $url = $router->urlFromPattern($url);
-                            $url = Url::to($url);
+                                $url = $translator->getPathInLocale($page->url, $defaultLocale);
+                                $url = $router->urlFromPattern($url);
+                                $url = Url::to($url);
 
-                            if (count($alternateLocales) > 1) {
-                                foreach ($alternateLocales as $locale) {
-                                    if ($page->hasTranslatablePageUrl($locale)) {
-                                        $page->rewriteTranslatablePageUrl($locale);
+                                if (count($alternateLocales) > 1) {
+                                    foreach ($alternateLocales as $locale) {
+                                        if ($page->hasTranslatablePageUrl($locale)) {
+                                            $page->rewriteTranslatablePageUrl($locale);
+                                        }
+                                        $altUrl = $translator->getPathInLocale($page->url, $locale);
+                                        $altUrl = $router->urlFromPattern($altUrl);
+                                        $alternateLocaleUrls[$locale] = Url::to($altUrl);
                                     }
-                                    $altUrl = $translator->getPathInLocale($page->url, $locale);
-                                    $altUrl = $router->urlFromPattern($altUrl);
-                                    $alternateLocaleUrls[$locale] = Url::to($altUrl);
                                 }
                             }
                         }
@@ -390,10 +403,15 @@ class Sitemap extends Model
     {
         $result = [];
 
-        $defaultLocale = \RainLab\Translate\Models\Locale::getDefault()->code;
+        // october 2
+        if (class_exists('\RainLab\Translate\Models\Locale')){
+            $defaultLocale = \RainLab\Translate\Models\Locale::getDefault()->code;
+            $alternateLocales = array_keys(\RainLab\Translate\Models\Locale::listEnabled());
+        } else { // october 3
+            $defaultLocale = \RainLab\Translate\Classes\Locale::getDefault()->code;
+            $alternateLocales = \RainLab\Translate\Classes\Locale::listEnabled();
+        }
         $pageUrl = self::getPageLocaleUrl($page, $menuItem, $defaultLocale, [$paramName => 'slug']);
-
-        $alternateLocales = array_keys(\RainLab\Translate\Models\Locale::listEnabled());
 
         if (count($alternateLocales) > 1) {
             foreach ($alternateLocales as $locale) {
@@ -450,10 +468,16 @@ class Sitemap extends Model
     protected static function getStaticPageMenuItem($page)
     {
         $translator = \RainLab\Translate\Classes\Translator::instance();
-        $defaultLocale = \RainLab\Translate\Models\Locale::getDefault()->code;
+        // october 2
+        if (class_exists('\RainLab\Translate\Models\Locale')){
+            $defaultLocale = \RainLab\Translate\Models\Locale::getDefault()->code;
+            $alternateLocales = array_keys(\RainLab\Translate\Models\Locale::listEnabled());
+        } else { // october 3
+            $defaultLocale = \RainLab\Translate\Classes\Locale::getDefault()->code;
+            $alternateLocales = \RainLab\Translate\Classes\Locale::listEnabled();
+        }
         $page->rewriteTranslatablePageUrl($defaultLocale);
         $pageUrl = Url::to($translator->getPathInLocale(array_get($page->attributes, 'viewBag.url'), $defaultLocale));
-        $alternateLocales = array_keys(\RainLab\Translate\Models\Locale::listEnabled());
         if (count($alternateLocales) > 1) {
             foreach ($alternateLocales as $locale) {
                 $page->rewriteTranslatablePageUrl($locale);

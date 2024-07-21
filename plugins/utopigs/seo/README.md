@@ -153,7 +153,7 @@ public static function mapSeoData($reference)
 
     $seo_data = [
         'title' => $item->title,
-        'description' => str_limit(strip_tags($item->description), 155),
+        'description' => str_limit(strip_tags($item->description), 160),
         'image' => $item->image,
     ];
 
@@ -280,11 +280,11 @@ protected static function resolveMenuItem($item, $url, $theme)
 
         $page = Page::loadCached($theme, $item->cmsPage);
 
-        $defaultLocale = \RainLab\Translate\Models\Locale::getDefault()->code;
+        $defaultLocale = \RainLab\Translate\Classes\Locale::getDefault()->code;
 
         $pageUrl = \Utopigs\Seo\Models\Sitemap::getPageLocaleUrl($page, $post, $defaultLocale, ['slug' => 'slug']);
 
-        $alternateLocales = array_keys(\RainLab\Translate\Models\Locale::listEnabled());
+        $alternateLocales = array_keys(\RainLab\Translate\Classes\Locale::listEnabled());
 
         if (count($alternateLocales) > 1) {
             foreach ($alternateLocales as $locale) {

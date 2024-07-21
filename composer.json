@@ -43,7 +43,6 @@
         "dimsog/wn-slider-plugin": "^1.0",
         "hounddd/wn-lightgallery-plugin": "^1.0",
         "offline/oc-seeder-plugin": "^3.0",
-        "winter/wn-sitemap-plugin": "^2.0",
         "webvpf/wn-robots-plugin": "^1.0",
         "studiobosco/wn-seo-extension": "^1.0"
     },

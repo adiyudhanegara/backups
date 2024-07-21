@@ -1,7 +1,7 @@
-name: 'Basic'
+name: Basic
 description: 'Basic theme for my winter cms'
-author: 'Dona'
-homepage: 'whatever'
+author: Dona
+homepage: whatever
 code: basic
 form:
     fields:
