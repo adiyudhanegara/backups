@@ -29,6 +29,7 @@ forceUrl = 0
         <link rel="stylesheet" href="{{ 'assets/vendor/font-awesome/v6.6.0/all.css'|theme }}">
 
         {# Javascripts #}
+        <script type="text/javascript" src="{{ [
             '@jquery',
             '@framework',
             '@framework.extras',
@@ -39,21 +40,19 @@ forceUrl = 0
         ]|theme }}"></script>
 
         {# Vendor CSS #}
-        <link href="{{ [
+        <link rel="stylesheet" href="{{ [
             '@framework.extras',
+            'assets/vendor/aos/aos.css',
             'assets/vendor/owl.carousel/owl.carousel.min.css',
             'assets/vendor/owl.carousel/owl.theme.default.min.css',
+        ]|theme }}">
+
         {# Layout CSS #}
+        <link rel="stylesheet" href="{{ [
             'assets/css/styles.css',
             'assets/stylesheets/annimations.less',
-            'assets/vendor/aos/aos.css',
-        ]|theme }}" rel="stylesheet">
-
-        <!-- Layout CSS -->
-        <link href="{{ [
-            '@framework.extras',
             'assets/stylesheets/frontend/main.less',
-        ]|theme }}" rel="stylesheet">
+        ]|theme }}">
 
         {% styles %}
         {% partial "meta/seo" %}
