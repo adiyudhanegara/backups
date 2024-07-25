@@ -4,6 +4,7 @@ description = "Frontend Layout"
 forceUrl = 0
 
 [SeoCmsPage]
+
 ==
 <!DOCTYPE html>
 <html>
@@ -20,13 +21,14 @@ forceUrl = 0
         <link rel="icon" type="image/png" sizes="16x16" href="{{'assets/images/favicon/favicon-16x16.png'|theme }}">
         <link rel="manifest" href="{{'assets/images/favicon/site.webmanifest'|theme }}">
 
-        <!-- Google fonts-->
-        {# <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" /> #}
+        {# Google fonts #}
+        {# <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" /> #}
+        {# <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" /> #}
 
         {# Fontawsome #}
         <link rel="stylesheet" href="{{ 'assets/vendor/font-awesome/v6.6.0/all.css'|theme }}">
 
+        {# Javascripts #}
             '@jquery',
             '@framework',
             '@framework.extras',
@@ -36,11 +38,12 @@ forceUrl = 0
             'assets/vendor/owl.carousel/owl.carousel.min.js',
         ]|theme }}"></script>
 
-        <!-- Main CSS -->
+        {# Vendor CSS #}
         <link href="{{ [
             '@framework.extras',
             'assets/vendor/owl.carousel/owl.carousel.min.css',
             'assets/vendor/owl.carousel/owl.theme.default.min.css',
+        {# Layout CSS #}
             'assets/css/styles.css',
             'assets/stylesheets/annimations.less',
             'assets/vendor/aos/aos.css',
@@ -67,22 +70,22 @@ forceUrl = 0
 
     <body class="page-{{ pageId }} layout-{{ this.layout.id }}">
 
-        <!-- Navigation-->
+        {# Navigation #}
         {% partial 'shared/navigation' %}
 
-        <!-- Content -->
+        {# Content #}
         <main id="layout-content">
             {% page %}
 
             {% partial 'shared/footer' %}
         </main>
 
-        <!-- Back to top button -->
+        {# Back to top button #}
         <button id="btn-back-to-top" type="button" class="btn btn-secondary btn-floating btn-lg right bounce2 forward">
             <i class="fas fa-solid fa-chevron-up"></i>
         </button>
 
-        <!-- Support button -->
+        {# Support button #}
         <div class="floating-container left wiggle pause-on-hover">
             <div class="supp shadow">
                 <div class="floating-content">
@@ -111,7 +114,7 @@ forceUrl = 0
             </div>
         </div>
 
-        <!-- Scripts -->
+        {# Scripts #}
         <script src="{{ [
             'assets/vendor/aos/aos.js',
             'assets/javascript/app.js',
