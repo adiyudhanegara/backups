@@ -174,4 +174,7 @@ $(function(){
 		},
 	});
 
+	$('#subscriptionForm').on("ajaxError", function(event, jqxhr, settings, thrownError) {
+		return event.preventDefault();
+	});
 });

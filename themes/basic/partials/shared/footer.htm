@@ -41,7 +41,7 @@ postPage = "blog/show"
         </div>
         <div class="footer-content pt-5 pb-5">
             <div class="row">
-                <div class="col-xl-4 col-lg-4 mb-50">
+                <div class="col-xl-6 col-lg-6 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="/" class="navbar-brand lh-sm text-light">
@@ -64,8 +64,8 @@ postPage = "blog/show"
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                    {# <div class="footer-widget">
+                {# <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    <div class="footer-widget">
                         <div class="footer-widget-heading">
                             <h3>Useful Links</h3>
                         </div>
@@ -82,21 +82,20 @@ postPage = "blog/show"
                             <li><a href="#">Contact us</a></li>
                             <li><a href="#">Latest News</a></li>
                         </ul>
-                    </div> #}
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-                    <div class="footer-widget">
-                        <div class="footer-widget-heading">
-                            <h3>Subscribe</h3>
-                        </div>
-                        <div class="footer-text mb-25">
-                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-                        </div>
-                        <div class="subscribe-form">
-                            <form action="#">
-                                <input type="text" placeholder="Email Address">
-                                <button><i class="fab fa-telegram-plane"></i></button>
-                            </form>
+                    </div>
+                </div> #}
+                <div class="col-xl-6 col-lg-6 mb-50">
+                    <div class="row">
+                        <div class="footer-widget col-12">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form container">
+                                {% component "newsSubscribe" %}
+                            </div>
                         </div>
                     </div>
                 </div>
