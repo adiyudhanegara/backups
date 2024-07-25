@@ -1,14 +1,126 @@
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "created_at asc"
+categoryPage = "blog/category"
+postPage = "blog/show"
 ==
 <!-- Footer -->
-<footer id="layout-footer" class="py-4">
+<footer id="layout-footer" class="footer-section">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 my-3 my-lg-0">
+        <div class="footer-cta pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="cta-text">
+                            <h4>Visit us</h4>
+                            <span>Jalan Raya Celuk, Kecamatan Sukawati,Kabupaten Gianyar, Bali 80582</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="cta-text">
+                            <h4>Call us</h4>
+                            <span>+62 878-6082-8780</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 mb-30">
+                    <div class="single-cta">
+                        <div class="cta-text">
+                            <h4>Mail us</h4>
+                            <ul>
+                                <li class="cta-text p-0"><span>info@gentasarisilver.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 text-lg-start">&copy; {{ "now"|date("Y") }} {{ 'site.name'|_ }} </div>
-            <div class="col-lg-4 text-lg-end">
-                <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-logo">
+                            <a href="/" class="navbar-brand lh-sm text-light">
+                                <h3 class="fw-light text-capitalize m-0">Genta<b class="fw-bold text-primary">Sari</b></h3>
+                                <h6 class="sfst-italic text-capitalize mb-0" style="font-size:0.75rem;">Silver &amp; Gold Jewellry</h6>
+                            </a>
+                        </div>
+                        <div class="footer-text">
+                            <p style="text-align: justify;">
+                                Genta Sari Silver offers exquisite Bali silver jewelry handcrafted by skilled artisans in Celuk Silver Village.
+                                Discover our unique Balinese designs and join our silver jewelry making classes. <a href="/contact">Contact us</a>
+                                or visit us at Celuk Silver Village, Bali.
+                            </p>
+                        </div>
+                        <div class="footer-social-icon">
+                            <span>Follow us</span>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                    {# <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Useful Links</h3>
+                        </div>
+                        {% component "blogPosts" %}
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Expert Team</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Latest News</a></li>
+                        </ul>
+                    </div> #}
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                    <div class="footer-widget">
+                        <div class="footer-widget-heading">
+                            <h3>Subscribe</h3>
+                        </div>
+                        <div class="footer-text mb-25">
+                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                        </div>
+                        <div class="subscribe-form">
+                            <form action="#">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fab fa-telegram-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; {{ "now"|date("Y") }} {{ 'site.name'|_ }}, All Right Reserved</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/galleries">Galleries</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

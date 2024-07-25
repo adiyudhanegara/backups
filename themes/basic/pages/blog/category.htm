@@ -1,0 +1,24 @@
+title = "Blog Category Show"
+url = "/blog/category/:slug"
+layout = "frontend"
+description = "Blog Categories"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+==
+{# Main Banner #}
+{% partial 'shared/mainHeader' %}
+
+{# Blog #}
+<section id="blog" class="page-section rounded-top">
+    <div class="container">
+        <div class="contact-form-container" data-aos="zoom-in-up">
+            {% component 'blogCategories' %}
+        </div>
+    </div>
+</section>

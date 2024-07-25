@@ -1,0 +1,23 @@
+title = "Blog Show"
+url = "/blog/post/:slug"
+layout = "frontend"
+description = "Blog show page"
+is_hidden = 1
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/index"
+==
+{# Main Banner #}
+{% partial 'shared/mainHeader' %}
+
+{# Blog #}
+<section id="blog" class="page-section">
+    <div class="container">
+        <div class="contact-form-container" data-aos="zoom-in-up">
+            {% component 'blogPost' %}
+        </div>
+    </div>
+</section>

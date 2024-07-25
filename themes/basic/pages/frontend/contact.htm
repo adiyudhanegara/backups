@@ -1,0 +1,53 @@
+title = "Contact Page"
+url = "/contact"
+layout = "frontend"
+description = "Contact Us Page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[contactForm]
+==
+{# Main Banner #}
+{% partial 'shared/mainHeader' %}
+
+{# Adress #}
+<section id="address" class="page-section">
+    <div class="container">
+        <div class="text-center" data-aos="zoom-in">
+            <h2 class="section-heading text-uppercase">Visit Us!</h2>
+            <h3 class="section-subheading text-muted">Visit our location and explore our stunning silver jewelry gallery!</h3>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row map-wrapper">
+            <div class="map-banner col-12 banner-overlay image-cover">
+                <img src="{{'assets/images/gentasari/front.png'|theme }}" alt="..." />
+                <div class="contents" data-aos="zoom-in-down" data-aos-delay="300">
+                    <h2>Celuk Silver Village</h2>
+                    <h3 class="fw-light">Bali, Indonesia.</h3>
+                    <small class="fw-lighter d-block w-75 px-2 mt-2">
+                        Jalan Raya Celuk, Kecamatan Sukawati, Kabupaten Gianyar, Bali 80582
+                    </small>
+                </div>
+            </div>
+            <div class="map-container col-12 rounded-top">
+                {% set map_link = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15779.703004150231!2d115.2595348!3d-8.6031275!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23e4a710ed38f%3A0x6b0e92bfa1ada1f3!2sGenta%20Sari%20Silver%20Class%20Jewelery%20Bali!5e0!3m2!1sen!2sid!4v1720854138938!5m2!1sen!2sid" %}
+                <iframe src={{ map_link }} data-aos="fade-up" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Contact #}
+<section id="contact" class="page-section">
+    <div class="container">
+        <div class="text-center" data-aos="zoom-in">
+            <h2 class="section-heading text-uppercase text-dark">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Reach out to us for personalized assistance with your silver needs.</h3>
+        </div>
+        <div class="contact-form-container" data-aos="zoom-in-up">
+            {% component 'contactForm' %}
+        </div>
+    </div>
+</section>

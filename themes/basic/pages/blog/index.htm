@@ -1,0 +1,31 @@
+title = "Blogs Index"
+url = "/blog/:page?"
+layout = "frontend"
+description = "Blog Page"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 1
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/show"
+==
+{# Main Banner #}
+{% partial 'shared/mainHeader' %}
+
+{# Blog #}
+<section id="blog" class="page-section rounded-top">
+    <div class="container">
+        <div class="text-center" data-aos="zoom-in">
+            <h2 class="section-heading text-uppercase text-dark">Blog List</h2>
+            <h3 class="section-subheading text-muted">Reach out to us for personalized assistance with your silver needs.</h3>
+        </div>
+        <div class="contact-form-container" data-aos="zoom-in-up">
+            {% component 'blogPosts' %}
+        </div>
+    </div>
+</section>
