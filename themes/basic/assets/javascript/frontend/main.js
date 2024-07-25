@@ -49,12 +49,15 @@ function scroll_to(el, opts={}){
 function backToTop() {
 	scroll_to($("body"));
 }
+
 //Get the button
 let mybutton = document.getElementById("btn-back-to-top");
+
 // When the user clicks on the button, scroll to the top of the document
 mybutton.addEventListener("click", backToTop);
 // When the user scrolls down 20px from the top of the document, show the button
 scrollFunction();
+
 window.onscroll = delay(function () {
 	scrollFunction();
 }, 100);
@@ -149,4 +152,26 @@ $(function(){
 			space: -50,
 		});
 	});
+
+	$("#services-slider").owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+			0:{
+				items:1,
+				nav:true
+			},
+			600:{
+				items:3,
+				nav:false
+			},
+			1000:{
+				items:3,
+				nav:true,
+				loop:false
+			}
+		},
+	});
+
 });

@@ -10,10 +10,6 @@ robot_index = "index"
 robot_follow = "follow"
 
 [viewBag]
-// localeTitle[en] = "Home"
-// localeTitle[id] = "Beranda"
-// localeUrl[en] = "/home"
-// localeUrl[id] = "/beranda"
 
 [contactForm]
 
@@ -143,69 +139,73 @@ noGalleriesMessage = "No galleries found"
             <h3 class="section-subheading text-muted">Discover Our Offerings.</h3>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="300">
-            {# Portfolio item 1 #}
-            <div class="portfolio-item col-lg-4 col-sm-6">
-                <div class="card">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#productsModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa-regular fa-calendar-plus fa-3x"></i>
+            <div class="col-12">
+                <div id="services-slider" class="owl-carousel owl-theme">
+                    {# Portfolio item 1 #}
+                    <div class="portfolio-item">
+                        <div class="card">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#productsModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa-regular fa-calendar-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="image-cover square">
+                                    <img class="img-fluid" src="{{'assets/images/products/2.jpg'|theme}}" alt="..." />
+                                </div>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Basic Silver Crafting Class</div>
+                                <div class="portfolio-caption-subheading text-muted">
+                                    Learn the fundamentals of silver crafting under the guidance of our skilled artisans.
+                                    This class is perfect for beginners looking to understand basic techniques like soldering, shaping, and polishing.
+                                </div>
                             </div>
-                        </div>
-                        <div class="image-cover square">
-                            <img class="img-fluid" src="{{'assets/images/products/2.jpg'|theme}}" alt="..." />
-                        </div>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Basic Silver Crafting Class</div>
-                        <div class="portfolio-caption-subheading text-muted">
-                            Learn the fundamentals of silver crafting under the guidance of our skilled artisans.
-                            This class is perfect for beginners looking to understand basic techniques like soldering, shaping, and polishing.
                         </div>
                     </div>
-                </div>
-            </div>
-            {# Portfolio item 2 #}
-            <div class="portfolio-item col-lg-4 col-sm-6">
-                <div class="card">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#productsModal4">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa-regular fa-calendar-plus fa-3x"></i>
+                    {# Portfolio item 2 #}
+                    <div class="portfolio-item">
+                        <div class="card">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#productsModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa-regular fa-calendar-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="image-cover square">
+                                    <img class="img-fluid" src="{{'assets/images/products/4.jpg'|theme}}" alt="..." />
+                                </div>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Intermediate Silver Jewelry Design</div>
+                                <div class="portfolio-caption-subheading text-muted">
+                                    Dive deeper into the art of silver jewelry design. This intermediate class covers advanced techniques such as stone setting,
+                                    filigree work, and intricate soldering.
+                                </div>
                             </div>
-                        </div>
-                        <div class="image-cover square">
-                            <img class="img-fluid" src="{{'assets/images/products/4.jpg'|theme}}" alt="..." />
-                        </div>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Intermediate Silver Jewelry Design</div>
-                        <div class="portfolio-caption-subheading text-muted">
-                            Dive deeper into the art of silver jewelry design. This intermediate class covers advanced techniques such as stone setting,
-                            filigree work, and intricate soldering.
                         </div>
                     </div>
-                </div>
-            </div>
-            {# Portfolio item 3 #}
-            <div class="portfolio-item col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <div class="card">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#productsModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa-regular fa-calendar-plus fa-3x"></i>
+                    {# Portfolio item 3 #}
+                    <div class="portfolio-item">
+                        <div class="card">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#productsModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa-regular fa-calendar-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <div class="image-cover square">
+                                    <img class="img-fluid" src="{{'assets/images/products/5.jpg'|theme}}" alt="..." />
+                                </div>
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Advanced Artisan Workshop</div>
+                                <div class="portfolio-caption-subheading text-muted">
+                                    Master the artistry of silver jewelry making in our advanced workshop.
+                                    This class is designed for experienced craftsmen interested in refining their skills
+                                    with complex designs, custom orders, and professional finishing techniques.
+                                </div>
                             </div>
-                        </div>
-                        <div class="image-cover square">
-                            <img class="img-fluid" src="{{'assets/images/products/5.jpg'|theme}}" alt="..." />
-                        </div>
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Advanced Artisan Workshop</div>
-                        <div class="portfolio-caption-subheading text-muted">
-                            Master the artistry of silver jewelry making in our advanced workshop.
-                            This class is designed for experienced craftsmen interested in refining their skills
-                            with complex designs, custom orders, and professional finishing techniques.
                         </div>
                     </div>
                 </div>
