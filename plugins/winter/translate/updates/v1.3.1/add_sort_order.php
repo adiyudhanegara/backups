@@ -6,7 +6,7 @@ use Winter\Storm\Database\Updates\Migration;
 
 class AddSortOrder extends Migration
 {
-    const TABLE_NAME = 'rainlab_translate_locales';
+    const TABLE_NAME = 'winter_translate_locales';
 
     public function up()
     {
@@ -22,7 +22,7 @@ class AddSortOrder extends Migration
         }
 
         Locale::extend(function ($model) {
-            $model->setTable('rainlab_translate_locales');
+            $model->setTable('winter_translate_locales');
         });
 
         $locales = Locale::all();

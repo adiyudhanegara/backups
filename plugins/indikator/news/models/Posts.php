@@ -317,7 +317,7 @@ class Posts extends Model
 
         if ($isTrans) {
             $current_locale = App::getLocale();
-            $default_locale = Db::table('rainlab_translate_locales')->where('is_default', 1)->value('code');
+            $default_locale = Db::table('winter_translate_locales')->where('is_default', 1)->value('code');
 
             if ($current_locale != $default_locale) {
                 $ids = Db::table('rainlab_translate_attributes')->where('model_type', 'Indikator\News\Models\Posts')->where('locale', $current_locale)->where('attribute_data', 'not like', '%"title":""%')->pluck('model_id');

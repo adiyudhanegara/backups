@@ -10,7 +10,7 @@ class SeedAllTables extends Seeder
     {
 
         Locale::extend(function ($model) {
-            $model->setTable('rainlab_translate_locales');
+            $model->setTable('winter_translate_locales');
         });
 
         if(Locale::count() === 0) {
