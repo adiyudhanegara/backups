@@ -1,0 +1,49 @@
+// Define the breakpoints
+@breakpoint-sm: 576px;
+@breakpoint-md: 768px;
+@breakpoint-lg: 992px;
+@breakpoint-xl: 1200px;
+@breakpoint-xxl: 1400px;
+
+// Media query mixins
+.media-breakpoint-up(@breakpoint, @rules) {
+	@media (min-width: @breakpoint) {
+		@rules();
+	}
+}
+
+// Usage
+// No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`
+.media-breakpoint-up(@breakpoint-sm, {
+	// styles for small breakpoint and up
+	.multi_step_form{
+		#msform {
+			fieldset{
+				padding: 20px 52.5px 0;
+			}
+		}
+	}
+});
+
+.media-breakpoint-up(@breakpoint-md, {
+	// styles for medium breakpoint and up
+	.multi_step_form{
+		#msform {
+			fieldset{
+				padding: 20px 105px 0;
+			}
+		}
+	}
+});
+
+.media-breakpoint-up(@breakpoint-lg, {
+	// styles for large breakpoint and up
+});
+
+.media-breakpoint-up(@breakpoint-xl, {
+	// styles for extra-large breakpoint and up
+});
+
+.media-breakpoint-up(@breakpoint-xxl, {
+	// styles for extra-extra-large breakpoint and up
+});
