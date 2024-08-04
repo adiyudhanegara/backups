@@ -465,17 +465,16 @@ noGalleriesMessage = "No galleries found"
                         </div>
                     </fieldset>
                 </div>
-                <div class="actions mt-auto">
-                    <fieldset>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-sm btn-o-secondary text-muted skip float-start">Skip</button>
-                            <button type="submit" class="btn btn-sm btn-success finish float-end">Finish</button>
-                            <button type="button" class="btn btn-sm btn-success next float-end">Next</button>
-                            <button type="button" class="btn btn-sm btn-secondary previous float-end me-2">Previous</button>
-                        </div>
-                    </fieldset>
-                </div>
+                <input type="submit" id="submit_form" class="d-none">
             </form>
+        </div>
+        <div class="modal-footer border-0">
+            <div class="actions mt-auto w-100">
+                <label class="btn btn-sm btn-o-secondary text-muted skip justify-self-start">Skip</label>
+                <label for="submit_form" class="btn btn-sm btn-success finish float-end">Finish</label>
+                <label class="btn btn-sm btn-success next float-end">Next</label>
+                <label class="btn btn-sm btn-secondary previous float-end me-2">Previous</label>
+            </div>
         </div>
     </div>
 </div>
