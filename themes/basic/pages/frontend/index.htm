@@ -137,16 +137,56 @@ noGalleriesMessage = "No galleries found"
             "slug": "basic-silver-crafting-class",
             "name": "Basic Silver Crafting Class",
             "imagePath": "assets/images/products/2.jpg"|theme,
-            "detailPath": "/services/basic-silver-crafting-class",
+            "detailPath": "/silver-class/basic-silver-crafting-class",
             "price": "IDR 500K",
             "salePrice": "IDR 550K",
+            "priceUnit": "Per Pax",
+            "priceDesc": "",
             "info": {
                 "instructor": "1",
-                "materials": "8gr",
+                "materials": "8g Silver",
                 "duration": "2",
                 "classmate": "10",
                 "design": "Free to chose from our design",
-            }
+            },
+            "note": "*IDR 50K for each extra gram"
+        },
+        {
+            "code": "srv-002",
+            "slug": "custom-design-silver-crafting-class",
+            "name": "Advance Silver Crafting Class",
+            "imagePath": "assets/images/products/2.jpg"|theme,
+            "detailPath": "/silver-class/advance-silver-crafting-class",
+            "price": "IDR 650K",
+            "salePrice": "IDR 750K",
+            "priceUnit": "Per Pax",
+            "priceDesc": "",
+            "info": {
+                "instructor": "1",
+                "materials": "8g Silver",
+                "duration": "2",
+                "classmate": "10",
+                "design": "You can bring your own design",
+            },
+            "note": "*IDR 50K for each extra gram."
+        },
+        {
+            "code": "srv-003",
+            "slug": "gold-crafting-class",
+            "name": "Gold Crafting Class",
+            "imagePath": "assets/images/products/2.jpg"|theme,
+            "detailPath": "/silver-class/basic-silver-crafting-class",
+            "price": "IDR 1200K",
+            "priceUnit": "Per Gram",
+            "priceDesc": "(1 ring ±5g)",
+            "info": {
+                "instructor": "1",
+                "materials": "18k or 22k Gold",
+                "duration": "2",
+                "classmate": "10",
+                "design": "Free to chose from our design or You can bring your own design",
+            },
+            "note": "*Book at least one day in advance."
         }
     ]
 %}
@@ -175,10 +215,13 @@ noGalleriesMessage = "No galleries found"
                                         <img class="img-fluid" src="{{ service.imagePath }}" alt="{{ service.name }}" />
                                     </div>
                                 </a>
-                                <div class="portfolio-caption card-body p-0">
-                                    <div class="portfolio-caption-heading p-3">{{ service.name }}</div>
+                                <div class="portfolio-caption card-body p-0 pb-3">
+                                    <div class="portfolio-caption-heading p-3 pb-2">{{ service.name }}</div>
+                                    <div class="col text-center px-5 pb-3 text-muted lh-1-25">
+                                        {{service.info.design}}
+                                    </div>
                                     <div class="portfolio-caption-subheading text-muted px-2">
-                                        <div class="container-fluid w-100 m-0 text-start">
+                                        <div class="container-fluid w-100 m-0 text-start d-flex flex-column">
                                             <div class="row border-bottom">
                                                 <div class="col p-1 d-flex align-items-start gap-2">
                                                     <button type="button" class="fa-thin fa-light fa-user-helmet-safety"
@@ -209,7 +252,7 @@ noGalleriesMessage = "No galleries found"
                                                         title="Materials"
                                                     ></button>
                                                     <div class="col">
-                                                        {{service.info.materials}} Silver
+                                                        {{service.info.materials}}
                                                     </div>
                                                 </div>
                                                 <div class="col p-1 d-flex align-items-start gap-2">
@@ -223,22 +266,29 @@ noGalleriesMessage = "No galleries found"
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col p-1 d-flex align-items-start gap-2">
-                                                    <button type="button" class="fa-thin fa-gem"
+                                            {# <div class="row border-bottom">
+                                                <div class="col p-1 d-flex align-items-start justify-content-center gap-2">
+                                                    <button type="button" class="fa-thin fa-screwdriver-wrench"
                                                         data-bs-toggle="tooltip"
                                                         data-bs-placement="top"
-                                                        title="Design &amp; Model"
+                                                        title="Tools"
                                                     ></button>
-                                                    <div class="col">
-                                                        {{service.info.design|raw}}
-                                                    </div>
+                                                    <small>
+                                                        Ready with traditional Balinese crafting tools
+                                                    </small>
                                                 </div>
-                                                <div class="col"></div>
-                                            </div>
+                                            </div> #}
                                         </div>
                                     </div>
                                 </div>
+                                {% if service.note %}
+                                    <div class="row px-3 pb-1">
+                                        <div class="col-2"></div>
+                                        <div class="col text-end text-muted">
+                                            <small class="fst-italic d-block lh-1">{{service.note}}</small>
+                                        </div>
+                                    </div>
+                                {% endif %}
                                 <div class="portfolio-action card-footer p-0 d-flex bg-white p-3">
                                     <div>
                                         <span class="d-block m-0">
@@ -248,7 +298,12 @@ noGalleriesMessage = "No galleries found"
                                             {% endif %}
                                         </span>
                                         <span class="h3">{{service.price}}</span>
-                                        <span class="d-block m-0">Per Pax</span>
+                                        <span class="d-block m-0">
+                                            {{service.priceUnit}}
+                                            {% if service.priceDesc %}
+                                                <small class="fst-italic text-muted">{{service.priceDesc}}</small>
+                                            {% endif %}
+                                        </span>
                                     </div>
                                     <div class="flex-1 d-flex flex-column align-items-end justify-content-end">
                                         <div>

@@ -7974,6 +7974,10 @@ textarea.form-control-lg {
   line-height: 1 !important;
 }
 
+.lh-1-25 {
+  line-height: 1.25 !important;
+}
+
 .lh-sm {
   line-height: 1.25 !important;
 }

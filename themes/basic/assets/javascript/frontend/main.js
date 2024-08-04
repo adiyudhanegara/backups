@@ -53,6 +53,7 @@ function backToTop() {
 function setupDateTimePicker(element) {
 	const defaults = {
 		inline: true,
+		minDate: 0,
 		formatDate: 'y-m-d',
 		format: 'Y-m-d H:i',
 		allowBlank: true,
