@@ -1,0 +1,19 @@
+title = "Show"
+url = "/:category/:slug"
+layout = "frontend"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[newsPost]
+slug = "{{ :slug }}"
+categorySlug = "{{ :category }}"
+postPage = "services/show"
+categoryPage = "services/category"
+==
+{# Main Banner #}
+{% partial 'shared/mainHeader' %}
+
+<section class="page-section" id="posts-list">
+    {% component 'newsPost' %}
+</section>

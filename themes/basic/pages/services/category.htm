@@ -1,0 +1,29 @@
+title = "Index"
+url = "/:slug"
+layout = "frontend"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[newsPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 1
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postFeatured = 0
+categoryFilter = "services"
+postPage = "services/show"
+categoryPage = "services/category"
+
+[newsCategories]
+slug = "{{ :slug }}"
+noCategoryMessage = "No categories found"
+categoryFilter = 1
+categoryPage = "services/category"
+==
+{# Main Banner #}
+{% partial 'shared/mainHeader' %}
+
+<section class="page-section" id="posts-list">
+    {% component "newsPosts" %}
+</section>
