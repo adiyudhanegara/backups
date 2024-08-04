@@ -363,40 +363,6 @@
                     color: @pfont;
                     padding-bottom: 30px;
                 }
-                .intl-tel-input{
-                    display: block;
-                    background: transparent;
-                    border: 0;
-                    box-shadow: none;
-                    outline: none;
-                    .flag-container{
-                        .selected-flag{
-                            padding:0 20px; 
-                            background: transparent;
-                            border: 0;
-                            box-shadow: none;
-                            outline: none;
-                            width: 65px;
-                            .iti-arrow{
-                                border: 0; 
-                                &:after{ 
-                                    content: "\f35f";
-                                    position: absolute;
-                                    top: 0;
-                                    right: 0;
-                                    font: normal normal normal 24px/7px Ionicons;
-                                    color: @pfont;
-                                }
-                            }
-                        }
-                    } 
-                }
-                #phone{
-                    padding-left: 80px;
-                }
-                .form-group{
-                    padding: 0 10px;
-                }
                 .fg_2, .fg_3{
                     padding-top: 10px;
                     display: block;
@@ -405,30 +371,6 @@
                 .fg_3{
                     padding-bottom: 70px;
                 }
-                .form-control{
-                    text-align: center;
-                    border-radius: 0;
-                    border: 0;
-                    border-bottom: 1px solid #d8e1e7;
-                    padding: 0 20px;
-                    height: auto;
-                    font: 400 15px/48px @roboto;
-                    color: @pfont;
-                    box-shadow: none;
-                    outline: none;
-                    width: 100%;
-                    &:hover, &:focus{
-                        border-color: @bc;
-                    }
-                    &:focus{  
-                        .placeholder-mixin({
-                            color: transparent;
-                        })
-                    }
-                    .placeholder-mixin({
-                        color: @pfont;
-                    })
-                } 
                 .product_select{ 
                     &:after{
                         display: none;
@@ -505,56 +447,33 @@
                     }
                 }
                 .input-group{
-                    padding-bottom: 40px;
-                    .custom-file{
-                        width: 100%;
-                        height: auto;
-                        .custom-file-label{ 
-                            width: 168px;   
-                            border-radius: 5px;
-                            cursor: pointer;  
-                            font: 700 14px/40px @roboto;
-                            border: 1px solid #99a2a8; 
-                            text-align: center;
-                            .transition-mixin();
-                            color: @pfont;
-                            i{
-                                font-size: 20px;
-                                padding-right: 10px;
-                            }
-                            &:hover, &:focus{
-                                background: @bc;
-                                border-color: @bc;
-                                color: #fff;
-                            }
-                        }
-                        input{
-                            display: none;
-                        }
-                    }
+                    display: inline-flex;
+                    width: auto;
                 }
-                .file_added{
-                    text-align: left;
-                    padding-left: 190px;
-                    padding-bottom: 60px;
-                    li{
-                        font: 400 15px/28px @roboto;
-                        color: @pfont;
-                        a{
-                            color: @bc;
-                            font-weight: 500;
-                            display: inline-block;
-                            position: relative;
-                            padding-left: 15px;
-                            i{
-                                font-size: 22px;
-                                padding-right: 8px;
-                                position: absolute;
-                                left: 0;
-                                transform: rotate(20deg);
-                            }
-                        }
+                .form-group, .input-group{
+                  > input{
+                    display: inline-block;
+                    min-width: 200px;
+                    text-align: center;
+                    width: auto;
+                    &[type=number] {
+                      /* Chrome, Safari, Edge, Opera */
+                      &::-webkit-outer-spin-button,
+                      &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                      }
+                      /* Firefox */
+                      appearance: textfield;
+                      -moz-appearance: textfield;
                     }
+                    &:focus{
+                        box-shadow: none;
+                    }
+                  }
+                }
+                .input-group{
+                    padding-bottom: 40px;
                 }
             }
         }
@@ -664,5 +583,45 @@ button{
         outline: unset;
         background: unset;
         line-height: 1.5;
+    }
+}
+
+.xdsoft_datetimepicker{
+    padding: 0;
+    margin: 0;
+    display: flex!important;
+    justify-content: center;
+    border: 0;
+    gap: 5px;
+    .xdsoft_datepicker{
+        margin: 0!important;
+        .xdsoft_monthpicker{
+            display: flex;
+            height: 35px;
+        }
+    }
+    .xdsoft_timepicker{
+        display: flex!important;
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0!important;
+        .xdsoft_time_box{
+            width: 100%;
+            .xdsoft_time_variant{
+                width: 100%;
+            }
+        }
+        .xdsoft_prev{
+            margin: 0!important;
+            margin-top: 15px!important;
+        }
+        .xdsoft_next{
+            margin: 0!important;
+        }
+        .xdsoft_time_box{
+            width: 100%;
+        }
     }
 }
