@@ -48,7 +48,7 @@ noGalleriesMessage = "No galleries found"
             <div class="col-md-4">
                 <span class="fa-stack fa-4x">
                     <i class="fas fa-circle fa-stack-2x text-light"></i>
-                    <i class="fas fa-regular fa-gem fa-stack-1x fa-inverse text-muted"></i>
+                    <i class="fas fa-regular fa-file-certificate fa-stack-1x fa-inverse text-muted"></i>
                 </span>
                 <h4 class="my-3">Expertise</h4>
                 <p class="text-muted">
@@ -136,7 +136,7 @@ noGalleriesMessage = "No galleries found"
             "code": "srv-001",
             "slug": "basic-silver-crafting-class",
             "name": "Basic Silver Crafting Class",
-            "imagePath": "assets/images/products/2.jpg"|theme,
+            "imagePath": "assets/images/products/services/basic.png"|theme,
             "detailPath": "/silver-class/basic-silver-crafting-class",
             "price": "IDR 500K",
             "salePrice": "IDR 550K",
@@ -155,7 +155,7 @@ noGalleriesMessage = "No galleries found"
             "code": "srv-002",
             "slug": "custom-design-silver-crafting-class",
             "name": "Advance Silver Crafting Class",
-            "imagePath": "assets/images/products/2.jpg"|theme,
+            "imagePath": "assets/images/products/services/advance.png"|theme,
             "detailPath": "/silver-class/advance-silver-crafting-class",
             "price": "IDR 650K",
             "salePrice": "IDR 750K",
@@ -174,11 +174,11 @@ noGalleriesMessage = "No galleries found"
             "code": "srv-003",
             "slug": "gold-crafting-class",
             "name": "Gold Crafting Class",
-            "imagePath": "assets/images/products/2.jpg"|theme,
+            "imagePath": "assets/images/products/services/gold.jpg"|theme,
             "detailPath": "/silver-class/basic-silver-crafting-class",
             "price": "IDR 1200K",
             "priceUnit": "Per Gram",
-            "priceDesc": "(1 ring ±5g)",
+            "priceDesc": "(1 ring &plusmn;5g)",
             "info": {
                 "instructor": "1",
                 "materials": "18k or 22k Gold",
@@ -301,7 +301,7 @@ noGalleriesMessage = "No galleries found"
                                         <span class="d-block m-0">
                                             {{service.priceUnit}}
                                             {% if service.priceDesc %}
-                                                <small class="fst-italic text-muted">{{service.priceDesc}}</small>
+                                                <small class="fst-italic text-muted">{{service.priceDesc|raw}}</small>
                                             {% endif %}
                                         </span>
                                     </div>
