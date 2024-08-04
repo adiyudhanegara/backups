@@ -1,4 +1,4 @@
-{% set post = __SELF__[post] %}
+{% set post = __SELF__.post %}
 
 <div class="post">
     <div class="post-content">
@@ -19,8 +19,8 @@
         {% if post.content %}<div class="post-content">{{ post.content|raw }}</div>{% endif %}
     </div>
     <div class="post-nav">
-        {% if __SELF__[prev] %}Prev: <a href="{{ __SELF__[prev].url }}" class="prev">{{ __SELF__[prev].title }}</a>{% endif %}
+        {% if __SELF__.prev %}Prev: <a href="{{ __SELF__.prev.url }}" class="prev">{{ __SELF__.prev.title }}</a>{% endif %}
         <br>
-        {% if __SELF__[next] %}Next: <a href="{{ __SELF__[next].url }}" class="next">{{ __SELF__[next].title }}</a>{% endif %}
+        {% if __SELF__.next %}Next: <a href="{{ __SELF__.next.url }}" class="next">{{ __SELF__.next.title }}</a>{% endif %}
     </div>
 </div>
