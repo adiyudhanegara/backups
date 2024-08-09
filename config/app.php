@@ -46,7 +46,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://172.22.10.4'),
 
     /*
     |--------------------------------------------------------------------------
@@ -63,7 +63,7 @@ return [
     */
 
     'asset_url' => env('ASSET_URL', null),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Temporary Path
@@ -251,7 +251,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', 'OGYphsnwFmgnxrOyzuwwBq6m2w1w2ENL'),
     'cipher' => 'AES-256-CBC',
 
     /*

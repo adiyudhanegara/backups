@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'backendTimezone' => 'UTC',
+    'backendTimezone' => 'Asia/Makassar',
 
     /*
     |--------------------------------------------------------------------------
@@ -376,8 +376,8 @@ return [
     */
 
     'defaultMask' => [
-        'file' => null,
-        'folder' => null,
+        'file' => '777',
+        'folder' => '777',
     ],
 
     /*
