@@ -22,10 +22,47 @@ width = 300
 height = 300
 resizer = "auto"
 ==
+<?php
+function onStart()
+{
+    $slug = $this->param('slug');
+    $videos = Media->listFolderContents("\/galleries/$slug", ['by' => 'title', 'direction' => 'asc'], 'video', true);
+    $this["videos"] = array_map(function($image) {
+        return [
+            "path" => Media->url($image->path),
+            "name" => basename($image->path),
+        ];
+    }, $videos);
+}
+?>
+==
 {% partial 'shared/galleryHeader' %}
 
 <section class="page-section" id="gallery">
   <div class="container">
     {% component 'gallerySlug' %}
+  </div>
+  <div class="container mt-5">
+      <div class="row">
+          <div class="col-12">
+              <div class="text-center" data-aos="zoom-in">
+                  <h3 class="section-subheading text-muted">Explore Our Activities: Experience the Art of Silver Crafting</h3>
+              </div>
+              <div id="video-carousel" class="owl-carousel owl-theme">
+                  {% for video in videos %}
+                      {% set video_src = video.path %}
+                      <div id="video-gallery-{{loop.index}}" class="player">
+                          <video data-video-js controls
+                              id="video-item-{{loop.index}}"
+                              class="video-js vjs-theme-city"
+                              preload="auto"
+                          >
+                              <source src="{{ video_src }}" type="video/mp4">
+                          </video>
+                      </div>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
   </div>
 </section>

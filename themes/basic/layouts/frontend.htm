@@ -7,6 +7,14 @@ forceUrl = 0
 
 [newsSubscribe]
 ==
+<?php
+    function onStart()
+    {
+        // Get the media library instance
+        define("Media", \System\Classes\MediaLibrary::instance());
+    }
+?>
+==
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,6 +48,7 @@ forceUrl = 0
             'assets/vendor/owl.carousel/owl.carousel.min.js',
             'assets/vendor/jquery/jquery.easing.min.js',
             'assets/vendor/jquery.ui/jquery-ui.min.js',
+            'assets/vendor/videojs/videojs.min.js',
         ]|theme }}"></script>
 
         {# Vendor CSS #}
@@ -51,6 +60,7 @@ forceUrl = 0
             'assets/vendor/bs.datePicker/css/bootstrap-datepicker.min.css',
             'assets/vendor/dateTimePicker/css/jquery.datetimepicker.css',
             'assets/vendor/jquery.ui/jquery-ui.min.css',
+            'assets/vendor/videojs/videojs.min.css',
         ]|theme }}">
 
         {# Layout CSS #}

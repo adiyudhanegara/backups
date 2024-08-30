@@ -51,4 +51,39 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    let videoPlayer = {};
+    $('[data-video-js]').each(function() {
+        let player = videojs(this.id, {
+            aspectRatio: '9:16',
+            responsive: true,
+            // controlBar: {
+            //   skipButtons: {
+            //     forward: 5,
+            //     backward: 10,
+            //   }
+            // },
+        });
+        videoPlayer[this.id] = player;
+    });
+
+	$("#video-carousel").owlCarousel({
+		loop:false,
+		margin:10,
+		responsiveClass:true,
+		responsive:{
+			0:{
+				items:2,
+				nav:true
+			},
+			600:{
+				items:3,
+				nav:false
+			},
+			1000:{
+				items:4,
+				nav:true,
+				loop:false
+			}
+		},
+	});
 });
