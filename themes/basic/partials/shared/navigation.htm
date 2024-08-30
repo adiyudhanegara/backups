@@ -14,10 +14,10 @@ forceUrl = 0
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#introduction">{{ 'site.menu.introduction'|_ }}</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#products">{{ 'site.menu.products'|_ }}</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#address">{{ 'site.menu.address'|_ }}</a></li>
-                <li class="nav-item"><a class="nav-link" rel="nofollow" href="#gallery">{{ 'site.menu.gellery'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="{{ this.page.id == "frontend-index" ? "nofollow" : "" }}" href="{{ this.page.id == "frontend-index" ? "" : "/" }}#introduction">{{ 'site.menu.introduction'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="{{ this.page.id == "frontend-index" ? "nofollow" : "" }}" href="{{ this.page.id == "frontend-index" ? "" : "/" }}#products">{{ 'site.menu.products'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="{{ this.page.id == "frontend-index" ? "nofollow" : "" }}" href="{{ this.page.id == "frontend-index" ? "" : "/" }}#address">{{ 'site.menu.address'|_ }}</a></li>
+                <li class="nav-item"><a class="nav-link" rel="{{ this.page.id == "frontend-index" ? "nofollow" : "" }}" href="{{ this.page.id == "frontend-index" ? "" : "/" }}#gallery">{{ 'site.menu.gellery'|_ }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="/contact">{{ 'site.menu.contact'|_ }}</a></li>
                 {% if this.page.layout != "exeption" %}
                     <li class="nav-item">
