@@ -403,7 +403,7 @@ $(function() {
 				$dialog.find("#msform").on("submit", function (event) {
 					var data = $('#msform').buildNestedObject(),
 							booking = data.booking;
-					var whatsappUrl = `https://wa.me/6287860828780?text=
+					var whatsappUrl = `https://wa.me/62859106792108?text=
 						*Silver Class Booking Details*%0a
 						*Package:* ${booking.package}%0a
 						*Name:* ${booking.name}%0a
