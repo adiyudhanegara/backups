@@ -1,28 +1,34 @@
 title = "Index"
-url = "/:slug"
+url = "/silver-class"
 layout = "frontend"
+meta_title = "Silver Class"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
 [newsPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 1
+postsPerPage = 10
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 postFeatured = 0
 categoryFilter = "services"
-postPage = "services/show"
-categoryPage = "services/category"
+postPage = "posts/show"
+categoryPage = "posts/category"
 
 [newsCategories]
 slug = "{{ :slug }}"
 noCategoryMessage = "No categories found"
 categoryFilter = 1
-categoryPage = "services/category"
+onlyNestedCategories = 0
+categoryPage = "posts/category"
 ==
 {# Main Banner #}
 {% partial 'shared/mainHeader' %}
+
+<section class="page-section" id="posts-categories">
+    {% component "newsCategories" %}
+</section>
 
 <section class="page-section" id="posts-list">
     {% component "newsPosts" %}

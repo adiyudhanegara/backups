@@ -1,19 +1,18 @@
-title = "Show"
-url = "/:category/:slug"
+title = "Tag"
+url = "/:slug"
 layout = "frontend"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
-[newsPost]
+[newsTags]
 slug = "{{ :slug }}"
-categorySlug = "{{ :category }}"
-postPage = "services/show"
-categoryPage = "services/category"
+noTagsMessage = "No tags found"
+tagPage = "blog/category"
 ==
 {# Main Banner #}
 {% partial 'shared/mainHeader' %}
 
 <section class="page-section" id="posts-list">
-    {% component 'newsPost' %}
+    {% component 'newsTags' %}
 </section>

@@ -1,0 +1,24 @@
+title = "Show"
+url = "/:category/:slug"
+layout = "frontend"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[newsPost]
+slug = "{{ :slug }}"
+categorySlug = "{{ :category }}"
+postPage = "posts/show"
+categoryPage = "posts/category"
+==
+{% set post = __SELF__.post %}
+
+<section class="page-section banner-overlay pb-0" id="posts-list">
+    <div class="bg-white py-5">
+        <div class="container">
+            <div class="col-12">
+                {% component 'newsPost' %}
+            </di>
+        </di>
+    </div>
+</section>

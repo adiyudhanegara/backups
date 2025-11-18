@@ -1,19 +1,10 @@
-description = "Frontend Layout"
-
 [localePicker]
 forceUrl = 0
 
 [SeoCmsPage]
 
 [newsSubscribe]
-==
-<?php
-function onStart()
-    {
-        // Get the media library instance
-        define("Media", \System\Classes\MediaLibrary::instance());
-    }
-?>
+categoryFilter = 1
 ==
 <!DOCTYPE html>
 <html>
@@ -23,6 +14,7 @@ function onStart()
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         {# <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> #}
         
+        <title>{% if post.title %}{{ post.title }} | Blog{% else %}My Blog{% endif %}</title>
         {% component "SeoCmsPage" %}
         
         <link rel="apple-touch-icon" sizes="180x180" href="{{'assets/images/favicon/apple-touch-icon.png'|theme }}">
@@ -48,7 +40,6 @@ function onStart()
             'assets/vendor/owl.carousel/owl.carousel.min.js',
             'assets/vendor/jquery/jquery.easing.min.js',
             'assets/vendor/jquery.ui/jquery-ui.min.js',
-            'assets/vendor/videojs/videojs.min.js',
         ]|theme }}"></script>
 
         {# Vendor CSS #}
@@ -60,7 +51,6 @@ function onStart()
             'assets/vendor/bs.datePicker/css/bootstrap-datepicker.min.css',
             'assets/vendor/dateTimePicker/css/jquery.datetimepicker.css',
             'assets/vendor/jquery.ui/jquery-ui.min.css',
-            'assets/vendor/videojs/videojs.min.css',
         ]|theme }}">
 
         {# Layout CSS #}
@@ -108,7 +98,7 @@ function onStart()
                 </div>
             </div>
             <div class="sub-button shadow">
-                <a href="https://api.whatsapp.com/send?phone=62859106792108&text=Hello%20Genta%20Sari%20Silver." target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=6287860828780&text=Hello%20Genta%20Sari%20Silver." target="_blank">
                     <i class="fa-brands fa-whatsapp fa-xl"></i>
                 </a>
             </div>
@@ -118,7 +108,7 @@ function onStart()
                 </a>
             </div>
             <div class="sub-button shadow">
-                <a href="https://www.instagram.com/gentasari_silverclass" target="_blank">
+                <a href="https://www.instagram.com/gentasari.silver" target="_blank">
                     <i class="fa-brands fa-instagram fa-xl"></i>
                 </a>
             </div>
